@@ -4,7 +4,7 @@
 	"eula": "",
 	"vendor": "iProsis",
 	"license": "",
-	"id": "com-sap-sample-table",
+	"id": "com.sap.sample.table",
 	"newInstancePrefix": "WidetTable",
 	"version": "0.0.1",
 	"icon": "",
