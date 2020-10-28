@@ -1,0 +1,23 @@
+{
+	"name": "SAC Table widget",
+	"description": "Custom Widget Table",
+	"eula": "",
+	"vendor": "iProsis",
+	"license": "",
+	"id": "com-sap-sample-table",
+	"newInstancePrefix": "WidetTable",
+	"version": "0.0.1",
+	"icon": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-sample-table",
+			"url": "https://iprosis-web.github.io/tableComponent/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {},
+	"methods": {},
+	"events": {}
+}
