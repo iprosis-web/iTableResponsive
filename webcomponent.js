@@ -1,8 +1,17 @@
 (function () {
+	// <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+	// <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	// <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
+
+	// <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	// <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	// <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	// <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
       <style>
-      </style>
+      </style>s
 	  <h1>Hey Table</h1>
     `;
 
@@ -25,9 +34,7 @@
 			onCustomWidgetBeforeUpdate(oChangedProperties) {}
 
 			//When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-			onCustomWidgetAfterUpdate(oChangedProperties) {
-				s;
-			}
+			onCustomWidgetAfterUpdate(oChangedProperties) {}
 
 			//When the custom widget is removed from the canvas or the analytic application is closed
 			onCustomWidgetDestroy() {}
