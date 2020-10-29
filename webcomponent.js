@@ -10,9 +10,12 @@
 
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
-      <style>
-      </style>s
-	  <h1>Hey Table</h1>
+			<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+			<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">  
+			<style>
+      		</style>s
+	  		<h1>Hey Table</h1>
     `;
 
 	customElements.define(
