@@ -48,7 +48,7 @@
 					</span>
 
 				</div>
-				<table id="table" class="table table-bordered table-hover data-mobile-responsive="true" data-min-width="562">
+				<table id="table" class="table table-bordered table-hover data-mobile-responsive="true" data-check-on-init="true" data-check-on-init="true">
 					<thead>
 						<tr>
 							<th data-field="id">
@@ -118,7 +118,8 @@
 					}
 				]
 
-				table.bootstrapTable({ data: data })
+				table.bootstrapTable({ data: data });
+				table.bootstrapTable("toggleView");
 
 			}
 
