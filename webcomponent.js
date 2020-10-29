@@ -144,7 +144,7 @@
 			
 			onCustomWidgetResize(width, height) {
 				console.log('Resized width, height:::', width, height);
-				if (width > 500 ) {
+				if (width < 500 ) {
 					if (!this.table.bootstrapTable('getOptions').cardView) {
 						this.table.bootstrapTable("toggleView");
 					}
