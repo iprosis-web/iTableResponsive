@@ -1,12 +1,28 @@
 (function () {
-	// <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
-	// <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	// <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
 
-	// <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	// <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	// <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	// <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+	let jQuieryScript = document.createElement('script');
+    jQuieryScript.src = 'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js';
+    jQuieryScript.async = false;
+	document.head.appendChild(jQuieryScript);
+
+	let popperScript = document.createElement('script');
+    popperScript.src = 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js';
+    popperScript.async = false;
+	document.head.appendChild(popperScript);
+
+	let bootstrapScript = document.createElement('script');
+    bootstrapScript.src = 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js';
+    bootstrapScript.async = false;
+	document.head.appendChild(bootstrapScript);
+
+	let bootstrapTableScript = document.createElement('script');
+    bootstrapTableScript.src = 'https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js';
+    bootstrapTableScript.async = false;
+	document.head.appendChild(bootstrapTableScript);
+	
+
+
+
 
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
@@ -14,9 +30,11 @@
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">  
 			<style>
-      		</style>s
+      		</style>
 	  		<h1>Hey Table</h1>
     `;
+
+	bootstrapTableScript.onload = () => 
 
 	customElements.define(
 		'com-sap-sample-table',
