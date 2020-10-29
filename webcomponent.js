@@ -19,10 +19,11 @@
     bootstrapTableScript.src = 'https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js';
     bootstrapTableScript.async = false;
 	document.head.appendChild(bootstrapTableScript);
-	
 
-
-
+	let bootstrapTableMobileScript = document.createElement('script');
+    bootstrapTableMobileScript.src = 'https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/mobile/bootstrap-table-mobile.min.js';
+    bootstrapTableScript.async = false;
+	document.head.appendChild(bootstrapTableMobileScript);
 
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
@@ -72,7 +73,7 @@
 
     `;
 
-	bootstrapTableScript.onload = () => 
+	bootstrapTableMobileScript.onload = () => 
 
 	customElements.define(
 		'com-sap-sample-table',
