@@ -22,7 +22,7 @@
 
 	let bootstrapTableMobileScript = document.createElement('script');
     bootstrapTableMobileScript.src = 'https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/mobile/bootstrap-table-mobile.min.js';
-    bootstrapTableScript.async = false;
+    bootstrapTableMobileScript.async = false;
 	document.head.appendChild(bootstrapTableMobileScript);
 
 	let tmpl = document.createElement('template');
