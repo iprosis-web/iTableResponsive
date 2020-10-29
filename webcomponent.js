@@ -47,7 +47,7 @@
 					</span>
 
 				</div>
-				<table id="table" class="table table-bordered table-hover">
+				<table id="table" class="table table-bordered table-hover data-mobile-responsive="true" data-min-width="600px">
 					<thead>
 						<tr>
 							<th data-field="id">
