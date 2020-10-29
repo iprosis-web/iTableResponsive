@@ -119,12 +119,15 @@
 				]
 
 				this.table.bootstrapTable({ data: data });
+
 				//table.bootstrapTable("toggleView");
 
 			}
 
 			//Fired when the widget is added to the html DOM of the page
-			connectedCallback() {}
+			connectedCallback() {
+				this.redraw();
+			}
 
 			//Fired when the widget is removed from the html DOM of the page (e.g. by hide)
 			disconnectedCallback() {}
@@ -149,13 +152,19 @@
 						this.table.bootstrapTable("toggleView");
 					}
 				} else {
+
 					if (this.table.bootstrapTable('getOptions').cardView) {
 						this.table.bootstrapTable("toggleView");
 					}
 				}
 			}
 
-			redraw() {}
+			redraw() {
+				let width = this.table.width()
+				height = 1; // hot usable now
+				console.log('Initial width, height:::', (width, height);
+				onCustomWidgetResize(width, height);
+			}
 		}
 	);
 })();
