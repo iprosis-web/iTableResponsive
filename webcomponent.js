@@ -81,6 +81,8 @@
 				super();
 				let shadowRoot = this.attachShadow({ mode: 'open' });
 				shadowRoot.appendChild(tmpl.content.cloneNode(true));
+				console.log('Table:::', $("#table",shadowRoot));
+
 			}
 
 			//Fired when the widget is added to the html DOM of the page
