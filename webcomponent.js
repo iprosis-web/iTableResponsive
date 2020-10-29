@@ -31,7 +31,45 @@
 			<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">  
 			<style>
       		</style>
-	  		<h1>Hey Table</h1>
+			<h1>Hey Table</h1>
+			<div class="bootstrap-table bootstrap4">
+		<div class="fixed-table-toolbar"></div>
+
+		<div class="fixed-table-container" style="padding-bottom: 0px;">
+			<div class="fixed-table-header" style="display: none;">
+				<table></table>
+			</div>
+			<div class="fixed-table-body">
+				<div class="fixed-table-loading table table-bordered table-hover" style="top: 51px;">
+					<span class="loading-wrap">
+						<span class="loading-text">Loading, please wait</span>
+						<span class="animation-wrap"><span class="animation-dot"></span></span>
+					</span>
+
+				</div>
+				<table id="table" class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th data-field="id">
+								<div class="th-inner ">ID</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th data-field="name">
+								<div class="th-inner ">Item Name</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th data-field="price">
+								<div class="th-inner ">Item Price</div>
+								<div class="fht-cell"></div>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+			  
+
     `;
 
 	bootstrapTableScript.onload = () => 
