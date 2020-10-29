@@ -82,8 +82,8 @@
 				super();
 				let shadowRoot = this.attachShadow({ mode: 'open' });
 				shadowRoot.appendChild(tmpl.content.cloneNode(true));
-				let table = $("#table",shadowRoot);
-				console.log('Table:::', table);
+				this.table = $("#table",shadowRoot);
+				console.log('Table:::', this.table);
 
 				let data = [
 					{
@@ -118,8 +118,8 @@
 					}
 				]
 
-				table.bootstrapTable({ data: data });
-				table.bootstrapTable("toggleView");
+				this.table.bootstrapTable({ data: data });
+				//table.bootstrapTable("toggleView");
 
 			}
 
@@ -144,8 +144,16 @@
 			
 			onCustomWidgetResize(width, height) {
 				console.log('Resized width, height:::', width, height);
+				if (width > 500 ) {
+					if (!this.table.bootstrapTable('getOptions').cardView) {
+						this.table.bootstrapTable("toggleView");
+					}
+				} else {
+					if (this.table.bootstrapTable('getOptions').cardView) {
+						this.table.bootstrapTable("toggleView");
+					}
+				}
 			}
-        
 
 			redraw() {}
 		}
