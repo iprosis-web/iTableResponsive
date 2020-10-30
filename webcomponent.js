@@ -33,7 +33,6 @@
 			<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">  
 			<style>
       		</style>
-			<h1>Hey Table</h1>
 			<div class="bootstrap-table bootstrap4">
 		<div class="fixed-table-toolbar"></div>
 
@@ -87,32 +86,32 @@
 						{
 							id: 0,
 							name: 'Item 0',
-							price: '$0',
+							price: '100$',
 						},
 						{
 							id: 1,
 							name: 'Item 1',
-							price: '$1',
+							price: '200$',
 						},
 						{
 							id: 2,
 							name: 'Item 2',
-							price: '$2',
+							price: '2300$',
 						},
 						{
 							id: 3,
 							name: 'Item 3',
-							price: '$3',
+							price: '377',
 						},
 						{
 							id: 4,
 							name: 'Item 4',
-							price: '$4',
+							price: '778$',
 						},
 						{
 							id: 5,
 							name: 'Item 5',
-							price: '$5',
+							price: '5$',
 						},
 					];
 
@@ -159,7 +158,8 @@
 					/*
 				data in format of array of strings;
 				Every string represent row in the table;
-				Fields of the row are separated by semicolumn:
+				Fields of the row are separated by semicolumn;
+				The amount of the fields in every row, and their column name should be corellated with fields string
 				[
 					'field1:field2:field3 ... :fieldN',
 					'field1:field2:field3 ... :fieldN',
@@ -171,7 +171,7 @@
 
 				redraw() {
 					let width = this.table.width();
-					height = 1; // hot usable now
+					let height = 1; // hot usable now
 					console.log('Initial width, height:::', (width, height));
 					onCustomWidgetResize(width, height);
 				}
