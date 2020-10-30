@@ -159,6 +159,20 @@
 				}
 			}
 
+			setData(data) {
+				/*
+				data in format of array of strings;
+				Every string represent row in the table;
+				Fields of the row are separated by semicolumn:
+				[
+					'field1:field2:field3 ... :fieldN',
+					'field1:field2:field3 ... :fieldN',
+					'field1:field2:field3 ... :fieldN'
+				]
+				*/
+				console.log('Set new data:::', data);
+			}
+
 			redraw() {
 				let width = this.table.width()
 				height = 1; // hot usable now

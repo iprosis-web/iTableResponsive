@@ -18,6 +18,17 @@
 		}
 	],
 	"properties": {},
-	"methods": {},
+	"methods": {
+		"setData": {
+
+			"description": "Sets new data to the table",
+			"parameters": [
+				{
+					"name": "data", 
+					"type": "string[]" 
+				}
+			]
+		}
+	},
 	"events": {}
 }
