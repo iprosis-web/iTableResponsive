@@ -104,6 +104,8 @@
 			onCustomWidgetResize(width, height) {
 				if (width <= this.breakingWidht) {
 					this.shadowRoot.querySelector('table').classList.add('mobile');
+				} else {
+					this.shadowRoot.querySelector('table').classList.remove('mobile');
 				}
 			}
 
