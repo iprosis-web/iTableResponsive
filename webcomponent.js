@@ -225,7 +225,7 @@
 
 					buildHeader();
 					console.log('Reload data - table:::', this.table);
-					this.table.bootstrapTable('load', data);
+					this.table.bootstrapTable('load', this.data);
 				}
 			}
 		);
