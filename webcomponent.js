@@ -63,10 +63,6 @@
 								<div class="th-inner ">Item Price</div>
 								<div class="fht-cell"></div>
 							</th>
-							<th data-field="date">
-								<div class="th-inner ">Date</div>
-								<div class="fht-cell"></div>
-							</th>
 						</tr>
 					</thead>
 				</table>
@@ -85,7 +81,7 @@
 					shadowRoot.appendChild(tmpl.content.cloneNode(true));
 					this.table = $('#table', shadowRoot);
 					console.log('Table:::', this.table);
-					this.header = '';
+					this.header = 'id:name:price';
 					this.data = [];
 
 					let data = [
@@ -99,31 +95,26 @@
 							id: 1,
 							name: 'Item 1',
 							price: '200$',
-							date: '11/12/2020',
 						},
 						{
 							id: 2,
 							name: 'Item 2',
 							price: '2300$',
-							date: '17/11/2010',
 						},
 						{
 							id: 3,
 							name: 'Item 3',
 							price: '377',
-							date: '15/07/1999',
 						},
 						{
 							id: 4,
 							name: 'Item 4',
 							price: '778$',
-							date: '18/10/2027',
 						},
 						{
 							id: 5,
 							name: 'Item 5',
 							price: '5$',
-							date: '17/05/2018',
 						},
 					];
 
@@ -188,9 +179,7 @@
 				*/
 
 					console.log('Set new data:::', data);
-					//let headerArray = this.header.split(':');
-					let headerArray = 'id:name:price'.split(':');
-
+					let headerArray = this.header.split(':');
 					let dataArray = [];
 					data.forEach((stringDataElement) => {
 						let stringDataArray = stringDataElement.split(':');
@@ -208,8 +197,8 @@
 					// Cal when changed size (width) - to check and possibly toggle dard/dable style
 					let width = this.table.width();
 					let height = 1; // hot usable now
-					console.log('Initial width, height:::', (width, height));
-					onCustomWidgetResize(width, height);
+					console.log('Initial width, height:::', width, height);
+					this.onCustomWidgetResize(width, height);
 				}
 
 				reloadData() {}
