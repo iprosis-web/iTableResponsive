@@ -109,43 +109,44 @@
 				}
 			}
 
-			// setHeader(header) {
-			// 	/*
-			// 	Sets headers of the table columns. Inpur fromat - string with fields separated by semicolumn ':':
-			// 	header1:header2:header3....:headerN
-			// 	*/
-			// 	this.header = header;
-			// }
+			setHeader(header) {
+				/*
+				Sets headers of the table columns. Inpur fromat - string with fields separated by semicolumn ':':
+				header1:header2:header3....:headerN
+				*/
+				console.log('New header received:::', header);
+				this.header = header;
+			}
 
-			// setData(data) {
-			// 	/*
-			// data in format of array of strings;
-			// Every string represent row in the table;
-			// Fields of the row are separated by semicolumn;
-			// The amount of the fields in every row, and their column name should be corellated with thr headr fields
-			// [
-			// 	'field1:field2:field3 ... :fieldN',
-			// 	'field1:field2:field3 ... :fieldN',
-			// 	'field1:field2:field3 ... :fieldN'
-			// ]
-			// */
+			setData(data) {
+				/*
+			data in format of array of strings;
+			Every string represent row in the table;
+			Fields of the row are separated by semicolumn;
+			The amount of the fields in every row, and their column name should be corellated with thr headr fields
+			[
+				'field1:field2:field3 ... :fieldN',
+				'field1:field2:field3 ... :fieldN',
+				'field1:field2:field3 ... :fieldN'
+			]
+			*/
 
-			// 	console.log('Set new data:::', data);
-			// 	let headerArray = this.header.split(':');
-			// 	let dataArray = [];
-			// 	data.forEach((stringDataElement) => {
-			// 		let stringDataArray = stringDataElement.split(':');
-			// 		let newDataElement = {};
-			// 		stringDataArray.forEach((item, index) => {
-			// 			newDataElement[headerArray[index]] = item;
-			// 		});
-			// 		dataArray.push(newDataElement);
-			// 	});
+				console.log('Set new data:::', data);
+				let headerArray = this.header.split(':');
+				let dataArray = [];
+				data.forEach((stringDataElement) => {
+					let stringDataArray = stringDataElement.split(':');
+					let newDataElement = {};
+					stringDataArray.forEach((item, index) => {
+						newDataElement[headerArray[index]] = item;
+					});
+					dataArray.push(newDataElement);
+				});
 
-			// 	this.data = dataArray;
+				this.data = dataArray;
 
-			// 	console.log('New data array:::', this.data);
-			// }
+				console.log('New data array:::', this.data);
+			}
 
 			redraw() {
 				// Cal when changed size (width) - to check and possibly toggle dard/dable style
@@ -155,30 +156,26 @@
 				this.onCustomWidgetResize(width, height);
 			}
 
-			// reloadData() {
-			// 	let that = this;
-			// 	function buildHeader() {
-			// 		that.table[0].deleteTHead();
-			// 		let tableHead = that.table[0].createTHead();
-			// 		let row = tableHead.insertRow(0);
-			// 		let headers = that.header.split(':');
-			// 		headers.forEach((headerName, index) => {
-			// 			let cell = row.insertCell(index);
-			// 			cell.setAttribute('data-field', headerName);
-			// 			let div1 = document.createElement('DIV');
-			// 			div1.innerHTML = headers[index];
-			// 			div1.classList.add('th-inner');
-			// 			let div2 = document.createElement('DIV');
-			// 			div1.classList.add('fht-cell');
-			// 			cell.appendChild(div1);
-			// 			cell.appendChild(div2);
-			// 		});
-			// 	}
+			reBuildTable() {
+				let that = this;
+				let table = this.shadowRoot.querySelector('table');
+				table.deleteTHead();
+				let tbody = document.querySelector('tbody');
+				if (tbody) {
+					tbody.parentNode.removeChild(tbody);
+				}
+				let tableHead = table.createTHead();
+				let row = tableHead.insertRow(0);
+				let headers = that.header.split(':');
+				headers.forEach((headerName, index) => {
+					let cell = row.insertCell(index);
+					cell.innerText = headers[index];
+				});
 
-			// 	buildHeader();
-			// 	console.log('Reload data - table:::', this.table);
-			// 	this.table.bootstrapTable('load', this.data);
-			// }
+				console.log('updated header');
+				// console.log('Reload data - table:::', this.table);
+				// this.table.bootstrapTable('load', this.data);
+			}
 		}
 	);
 })();
