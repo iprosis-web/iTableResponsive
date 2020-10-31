@@ -207,7 +207,7 @@
 					let that = this;
 					function buildHeader() {
 						that.table[0].deleteTHead();
-						let tableHead = table[0].createTHead();
+						let tableHead = that.table[0].createTHead();
 						let row = tableHead.insertRow(0);
 						let headers = that.header.split(':');
 						headers.forEach((headerName, index) => {
