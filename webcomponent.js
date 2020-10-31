@@ -204,11 +204,12 @@
 				}
 
 				reloadData() {
+					let that = this;
 					function buildHeader() {
-						this.table[0].deleteTHead();
+						that.table[0].deleteTHead();
 						let tableHead = table[0].createTHead();
 						let row = tableHead.insertRow(0);
-						let headers = this.header.split(':');
+						let headers = that.header.split(':');
 						headers.forEach((headerName, index) => {
 							let cell = row.insertCell(index);
 							cell.setAttribute('data-field', headerName);
