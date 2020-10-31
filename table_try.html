@@ -1,140 +1,74 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
 
 </head>
 
 <body>
 	<style>
-		html {
-			font-size: 1vh;
-		}
+		@media screen and (max-width: 600px) {
+			table thead {
+				display: none;
+			}
 
-		.container {
-			position: absolute;
-			width: 30%;
-			height: 20rem;
-			background-color: rgba(0, 0, 255, 0.5);
-		}
+			table td {
+				display: flex;
+				padding-top: 4px !important;
+				padding-bottom: 4px !important;
+				border: none !important;
+			}
 
-		table {
-			width: 90%;
-			height: 20rem;
+			table td:last-child {
+				padding-bottom: 8px !important;
+			}
 
-			position: absolute;
-			left: 50%;
-			top: 7rem;
-			transform: translate(-50%, 0);
+			table td:first-child {
+				padding-top: 8px !important;
+			}
 
+			table tr {
+				border-bottom: 1px solid #dee2e6 !important;
+			}
 
-		}
-
-		table td {
-			padding: 5px;
+			table td::before {
+				content: attr(label);
+				font-weight: bold;
+				width: 120px;
+				min-width: 120px;
+			}
 		}
 	</style>
 
 
-	<div class="container">
-		<table>
+	<table class="table table-bordered table-hover">
+		<thead>
 			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td label="ID">123</td>
+				<td label="Name">Product 0</td>
+				<td label="Price">100$</td>
 			</tr>
 			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
+				<td label="ID">457</td>
+				<td label="Name">Product 78</td>
+				<td label="Price">778$</td>
 			</tr>
 			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
+				<td label="ID">757787</td>
+				<td label="Name">New Brand</td>
+				<td label="Price">123$</td>
 			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-			<tr>
-				<td> one </td>
-				<td> two </td>
-				<td>three </td>
-			</tr>
-		</table>
-	</div>
-
+		</tbody>
+	</table>
 </body>
 
 </html>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>
-<tr>
-	<td> one </td>
-	<td> two </td>
-	<td>three </td>
-</tr>

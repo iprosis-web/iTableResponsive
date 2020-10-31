@@ -9,10 +9,26 @@
 					table thead {
 						display: none;
 					}
+
 					table td {
 						display: flex;
+						padding-top: 4px !important;
+						padding-bottom: 4px !important;
+						border: none !important;
 					}
-					
+
+					table td:last-child {
+						padding-bottom: 8px !important;
+					}
+
+					table td:first-child {
+						padding-top: 8px !important;
+					}
+
+					table tr {
+						border-bottom: 1px solid #dee2e6 !important;
+					}
+
 					table td::before {
 						content: attr(label);
 						font-weight: bold;
@@ -21,7 +37,7 @@
 					}
 				}
       		</style>
-			<table>
+			<table class="table table-bordered table-hover">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -31,19 +47,19 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>123</td>
-						<td>Product 0</td>
-						<td>100$</td>
+						<td label="ID">123</td>
+						<td label="Name">Product 0</td>
+						<td label="Price">100$</td>
 					</tr>
 					<tr>
-						<td>457</td>
-						<td>Product 78</td>
-						<td>778$</td>
+						<td label="ID">457</td>
+						<td label="Name" >Product 78</td>
+						<td label ="Price">778$</td>
 					</tr>
 					<tr>
-						<td>757787</td>
-						<td>New Brand</td>
-						<td>123$</td>
+						<td label="ID">757787</td>
+						<td label="Name" >New Brand</td>
+						<td label="Price">123$</td>
 					</tr>
 				</tbody>
 			</table>
