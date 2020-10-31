@@ -41,7 +41,7 @@
 			]
 		},
 
-		"reloadData": {
+		"reBuildTable": {
 			"description": "Reloads the tabele with ned header and data. Run methods setHeader and setData before it."
 		}
 	},
