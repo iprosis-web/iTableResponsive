@@ -5,36 +5,39 @@
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">  
 			<style>
-				@media screen and (max-width: 600px) {
-					table thead {
-						display: none;
-					}
 
-					table td {
-						display: flex;
-						padding-top: 4px !important;
-						padding-bottom: 4px !important;
-						border: none !important;
-					}
+				table {
+					width: 100%;
+				}
 
-					table td:last-child {
-						padding-bottom: 8px !important;
-					}
+				table.mobile thead {
+					display: none;
+				}
 
-					table td:first-child {
-						padding-top: 8px !important;
-					}
+				table.mobile td {
+					display: flex;
+					padding-top: 4px !important;
+					padding-bottom: 4px !important;
+					border: none !important;
+				}
 
-					table tr {
-						border-bottom: 1px solid #dee2e6 !important;
-					}
+				table.mobile td:last-child {
+					padding-bottom: 8px !important;
+				}
 
-					table td::before {
-						content: attr(label);
-						font-weight: bold;
-						width: 120px;
-						min-width: 120px;
-					}
+				table.mobile td:first-child {
+					padding-top: 8px !important;
+				}
+
+				table.mobile tr {
+					border-bottom: 1px solid #dee2e6 !important;
+				}
+
+				table.mobile td::before {
+					content: attr(label);
+					font-weight: bold;
+					width: 120px;
+					min-width: 120px;
 				}
       		</style>
 			<table class="table table-bordered table-hover">
@@ -70,17 +73,16 @@
 		class WidgetTable extends HTMLElement {
 			constructor() {
 				super();
-				let shadowRoot = this.attachShadow({ mode: 'open' });
+				this.shadowRoot = this.attachShadow({ mode: 'open' });
 				shadowRoot.appendChild(tmpl.content.cloneNode(true));
-				this.table = $('#table', shadowRoot);
-				console.log('Table:::', this.table);
 				this.header = 'id:name:price';
 				this.data = [];
+				this.breakingWidht = 500; // Lwss that this width - renderd as mobile. TODO: to be exposed as component propety.
 			}
 
 			//Fired when the widget is added to the html DOM of the page
 			connectedCallback() {
-				//this.redraw();
+				this.redraw();
 			}
 
 			//Fired when the widget is removed from the html DOM of the page (e.g. by hide)
@@ -99,7 +101,11 @@
 			// Commented out by default.  If it is enabled, SAP Analytics Cloud will track DOM size changes and call this callback as needed
 			//  If you don't need to react to resizes, you can save CPU by leaving it uncommented.
 
-			onCustomWidgetResize(width, height) {}
+			onCustomWidgetResize(width, height) {
+				if (width <= this.breakingWidht) {
+					this.shadowRoot.querySelector('table').classList.add('mobile');
+				}
+			}
 
 			// setHeader(header) {
 			// 	/*
@@ -139,13 +145,13 @@
 			// 	console.log('New data array:::', this.data);
 			// }
 
-			// redraw() {
-			// 	// Cal when changed size (width) - to check and possibly toggle dard/dable style
-			// 	let width = this.table.width();
-			// 	let height = 1; // hot usable now
-			// 	console.log('Initial width, height:::', width, height);
-			// 	this.onCustomWidgetResize(width, height);
-			// }
+			redraw() {
+				// Cal when changed size (width) - to check and possibly toggle dard/dable style
+				let width = this.shadowRoot.querySelector('table').offsetWidth;
+				let height = 1; // hot usable now
+				console.log('Initial width, height:::', width, height);
+				this.onCustomWidgetResize(width, height);
+			}
 
 			// reloadData() {
 			// 	let that = this;

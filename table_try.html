@@ -9,36 +9,34 @@
 
 <body>
 	<style>
-		@media screen and (max-width: 600px) {
-			table thead {
-				display: none;
-			}
+		table.mobile thead {
+			display: none;
+		}
 
-			table td {
-				display: flex;
-				padding-top: 4px !important;
-				padding-bottom: 4px !important;
-				border: none !important;
-			}
+		table.mobile td {
+			display: flex;
+			padding-top: 4px !important;
+			padding-bottom: 4px !important;
+			border: none !important;
+		}
 
-			table td:last-child {
-				padding-bottom: 8px !important;
-			}
+		table.mobile td:last-child {
+			padding-bottom: 8px !important;
+		}
 
-			table td:first-child {
-				padding-top: 8px !important;
-			}
+		table.mobile td:first-child {
+			padding-top: 8px !important;
+		}
 
-			table tr {
-				border-bottom: 1px solid #dee2e6 !important;
-			}
+		table.mobile tr {
+			border-bottom: 1px solid #dee2e6 !important;
+		}
 
-			table td::before {
-				content: attr(label);
-				font-weight: bold;
-				width: 120px;
-				min-width: 120px;
-			}
+		table.mobile td::before {
+			content: attr(label);
+			font-weight: bold;
+			width: 120px;
+			min-width: 120px;
 		}
 	</style>
 
