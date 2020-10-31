@@ -81,6 +81,8 @@
 					shadowRoot.appendChild(tmpl.content.cloneNode(true));
 					this.table = $('#table', shadowRoot);
 					console.log('Table:::', this.table);
+					this.header = '';
+					this.data = [];
 
 					let data = [
 						{
@@ -154,12 +156,21 @@
 					}
 				}
 
+				setHeader(header) {
+					/* 
+					Sets headers of the table columns. Inpur fromat - string with fields separated by semicolumn ':':
+					header1:header2:header3....:headerN
+					*/
+					this.header = header;
+					console.log('Header:::', this.header);
+				}
+
 				setData(data) {
 					/*
 				data in format of array of strings;
 				Every string represent row in the table;
 				Fields of the row are separated by semicolumn;
-				The amount of the fields in every row, and their column name should be corellated with fields string
+				The amount of the fields in every row, and their column name should be corellated with thr headr fields
 				[
 					'field1:field2:field3 ... :fieldN',
 					'field1:field2:field3 ... :fieldN',

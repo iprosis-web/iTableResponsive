@@ -28,7 +28,19 @@
 					"type": "string[]" 
 				}
 			]
+		},
+
+		"setHeader": {
+
+			"description": "Sets the header to the table",
+			"parameters": [
+				{
+					"name": "header", 
+					"type": "string" 
+				}
+			]
 		}
 	},
 	"events": {}
 }
+
