@@ -190,7 +190,9 @@
 						dataArray.push(newDataElement);
 					});
 
-					console.log('New data array:::', dataArray);
+					this.data = dataArray;
+
+					console.log('New data array:::', this.data);
 				}
 
 				redraw() {
@@ -201,7 +203,29 @@
 					this.onCustomWidgetResize(width, height);
 				}
 
-				reloadData() {}
+				reloadData() {
+					function buildHeader() {
+						this.table[0].deleteTHead();
+						let tableHead = table[0].createTHead();
+						let row = tableHead.insertRow(0);
+						let headers = this.header.split(':');
+						headers.forEach((headerName, index) => {
+							let cell = row.insertCell(index);
+							cell.setAttribute('data-field', headerName);
+							let div1 = document.createElement('DIV');
+							div1.innerHTML = headers[index];
+							div1.classList.add('th-inner');
+							let div2 = document.createElement('DIV');
+							div1.classList.add('fht-cell');
+							cell.appendChild(div1);
+							cell.appendChild(div2);
+						});
+					}
+
+					buildHeader();
+					console.log('Reload data - table:::', this.table);
+					this.table.bootstrapTable('load', data);
+				}
 			}
 		);
 })();
