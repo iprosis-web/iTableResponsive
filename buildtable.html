@@ -1,0 +1,96 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+</head>
+
+<body>
+
+	<style>
+	</style>
+	<div class="bootstrap-table bootstrap4">
+		<div class="fixed-table-toolbar"></div>
+
+		<div class="fixed-table-container" style="padding-bottom: 0px;">
+			<div class="fixed-table-header" style="display: none;">
+				<table></table>
+			</div>
+			<div class="fixed-table-body">
+				<div class="fixed-table-loading table table-bordered table-hover" style="top: 51px;">
+					<span class="loading-wrap">
+						<span class="loading-text">Loading, please wait</span>
+						<span class="animation-wrap"><span class="animation-dot"></span></span>
+					</span>
+
+				</div>
+				<table id="table" class="table table-bordered table-hover" data-mobile-responsive="true">
+					<thead>
+						<!-- <tr>
+							<th data-field="abc">
+								<div class="th-inner ">abc</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th data-field="def">
+								<div classs="th-inner ">def</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th data-field="xyz">
+								<div class="th-inner ">xyz</div>
+								<div class="fht-cell"></div>
+							</th>
+						</tr> -->
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let table = $("#table");
+		console.log(table);
+
+		let headers = ['abc', 'def', 'xyz'];
+
+		table[0].deleteTHead()
+		tableHead = table[0].createTHead();
+		let row = tableHead.insertRow(0);
+		headers.forEach((headerName, index) => {
+			let cell = row.insertCell(index);
+			cell.setAttribute("data-field", headerName)
+			let div1 = document.createElement('DIV');
+			div1.innerHTML = headers[index];
+			div1.classList.add('th-inner');
+			let div2 = document.createElement('DIV');
+			div1.classList.add('fht-cell');
+			cell.appendChild(div1);
+			cell.appendChild(div2);
+		})
+
+		let data = [
+			{
+				abc: 'wfwer',
+				def: 'svfrqgfwtgw',
+				xyz: 'kljhljkhg'
+			}
+		]
+		table.bootstrapTable({ data: data });
+	</script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+
+</body>
+
+</html>
