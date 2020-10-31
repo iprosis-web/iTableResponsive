@@ -159,11 +159,15 @@
 			reBuildTable() {
 				let that = this;
 				let table = this.shadowRoot.querySelector('table');
+
+				// Delete old header and body
 				table.deleteTHead();
 				let tbody = document.querySelector('tbody');
 				if (tbody) {
 					tbody.parentNode.removeChild(tbody);
 				}
+
+				// Create new header
 				let tableHead = table.createTHead();
 				let row = tableHead.insertRow(0);
 				let headers = that.header.split(':');
@@ -172,9 +176,15 @@
 					cell.innerText = headers[index];
 				});
 
-				console.log('updated header');
-				// console.log('Reload data - table:::', this.table);
-				// this.table.bootstrapTable('load', this.data);
+				// Create new body
+				this.data.forEach((dataItem, index) => {
+					let row = tbody.insertRow(index);
+					headers.forEach((header, index) => {
+						let cell = row.insertCell(index);
+						cell.setAttribute('label', header);
+						cell.innerText = dataItem[header];
+					});
+				});
 			}
 		}
 	);
