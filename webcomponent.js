@@ -177,6 +177,7 @@
 				});
 
 				// Create new body
+				tbody = table.createTBody();
 				this.data.forEach((dataItem, index) => {
 					let row = tbody.insertRow(index);
 					headers.forEach((header, index) => {
