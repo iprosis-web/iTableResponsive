@@ -162,7 +162,7 @@
 
 				// Delete old header and body
 				table.deleteTHead();
-				let tbody = document.querySelector('tbody');
+				let tbody = this.shadowRoot.querySelector('tbody');
 				if (tbody) {
 					tbody.parentNode.removeChild(tbody);
 				}
