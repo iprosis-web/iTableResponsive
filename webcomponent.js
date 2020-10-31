@@ -73,7 +73,7 @@
 		class WidgetTable extends HTMLElement {
 			constructor() {
 				super();
-				this.shadowRoot = this.attachShadow({ mode: 'open' });
+				let shadowRoot = this.attachShadow({ mode: 'open' });
 				shadowRoot.appendChild(tmpl.content.cloneNode(true));
 				this.header = 'id:name:price';
 				this.data = [];
