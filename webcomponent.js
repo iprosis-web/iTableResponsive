@@ -170,7 +170,12 @@
 
 				// callback on click on the row
 				const onClickRow = function () {
-					that.choosenRowData = this.cells.item(0).innerText; //this points to clicked element. Remember this function is used as onclick method
+					let resultString = '';
+					for (let i = 0; i < this.cells.length; i++) {
+						// NOTABLE: "this" points to clicked row. The function is used as onclick method
+						resultString = resultString + this.cells.item(i).innerText;
+					}
+					that.choosenRowData = resultString;
 					console.log('Clicked row:::', that.choosenRowData);
 				};
 
