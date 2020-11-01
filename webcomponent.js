@@ -78,6 +78,7 @@
 				this.header = 'id:name:price';
 				this.data = [];
 				this.breakingWidht = 500; // Lwss that this width - renderd as mobile. TODO: to be exposed as component propety.
+				this.choosenRowData = '';
 			}
 
 			//Fired when the widget is added to the html DOM of the page
@@ -167,9 +168,15 @@
 					tbody.parentNode.removeChild(tbody);
 				}
 
+				// callback on click on the row
+				const onChooseItem = function (event) {
+					console.log('Click event:::', event);
+				}
+
 				// Create new header
 				let tableHead = table.createTHead();
 				let row = tableHead.insertRow(0);
+				row.onclick = onChooseRow;
 				let headers = that.header.split(':');
 				headers.forEach((headerName, index) => {
 					let cell = row.insertCell(index);
