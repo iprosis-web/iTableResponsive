@@ -169,14 +169,14 @@
 				}
 
 				// callback on click on the row
-				const onChooseItem = function (event) {
+				const onClickRow = function (event) {
 					console.log('Click event:::', event);
 				}
 
 				// Create new header
 				let tableHead = table.createTHead();
 				let row = tableHead.insertRow(0);
-				row.onclick = onChooseRow;
+				row.onclick = onClickRow;
 				let headers = that.header.split(':');
 				headers.forEach((headerName, index) => {
 					let cell = row.insertCell(index);
