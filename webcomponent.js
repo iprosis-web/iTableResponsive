@@ -78,7 +78,7 @@
 				this.header = 'id:name:price';
 				this.data = [];
 				this.breakingWidht = 500; // Lwss that this width - renderd as mobile. TODO: to be exposed as component propety.
-				this.choosenRowData = '';
+				this.clickedRowData = '';
 			}
 
 			//Fired when the widget is added to the html DOM of the page
@@ -175,12 +175,12 @@
 						// NOTABLE: "this" points to clicked row. The function is used as onclick method of the row
 						resultArray.push(this.cells.item(i).innerText);
 					}
-					that.choosenRowData = resultArray.join(':');
+					that.clickedRowData = resultArray.join(':');
 					// Send event to be used by external framework
 					let externalEvent = new Event('onRowClicked');
 					that.dispatchEvent(externalEvent);
 
-					console.log('Clicked row:::', that.choosenRowData);
+					console.log('Clicked row:::', that.clickedRowData);
 				};
 
 				// Create new header
@@ -203,6 +203,10 @@
 						cell.innerText = dataItem[header];
 					});
 				});
+			}
+
+			getClickedRow() {
+				return this.clickedRowData;
 			}
 		}
 	);

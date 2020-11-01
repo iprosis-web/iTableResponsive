@@ -42,7 +42,12 @@
 		},
 
 		"reBuildTable": {
-			"description": "Reloads the tabele with ned header and data. Run methods setHeader and setData before it."
+			"description": "Reloads the tabele with new header and data. Run methods setHeader and setData before it."
+		},
+
+		"getClickedRow": {
+			"description": "Returns the string representing the data of clicked row",
+			"returnType": "string"
 		}
 	},
 	"events": {
