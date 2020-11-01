@@ -121,15 +121,15 @@
 
 			setData(data) {
 				/*
-			data in format of array of strings;
-			Every string represent row in the table;
-			Fields of the row are separated by semicolumn;
-			The amount of the fields in every row, and their column name should be corellated with thr headr fields
-			[
-				'field1:field2:field3 ... :fieldN',
-				'field1:field2:field3 ... :fieldN',
-				'field1:field2:field3 ... :fieldN'
-			]
+				data in format of array of strings;
+				Every string represent row in the table;
+				Fields of the row are separated by semicolumn;
+				The amount of the fields in every row, and their column name should be corellated with thr headr fields
+				[
+					'field1:field2:field3 ... :fieldN',
+					'field1:field2:field3 ... :fieldN',
+					'field1:field2:field3 ... :fieldN'
+				]
 			*/
 
 				console.log('Set new data:::', data);
@@ -150,7 +150,7 @@
 			}
 
 			redraw() {
-				// Cal when changed size (width) - to check and possibly toggle dard/dable style
+				// Check and possibly toggle dard/dable style
 				let width = this.shadowRoot.querySelector('table').offsetWidth;
 				let height = 1; // hot usable now
 				console.log('Initial width, height:::', width, height);
@@ -169,9 +169,10 @@
 				}
 
 				// callback on click on the row
-				const onClickRow = function (event) {
-					console.log('Click event:::', event);
-				}
+				const onClickRow = function () {
+					that.choosenRowData = this.cells.item(0).innerText; //this points to clicked element. Remember this function is used as onclick method
+					console.log('Clicked row:::', that.choosenRowData);
+				};
 
 				// Create new header
 				let tableHead = table.createTHead();
