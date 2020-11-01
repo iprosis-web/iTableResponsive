@@ -176,7 +176,6 @@
 				// Create new header
 				let tableHead = table.createTHead();
 				let row = tableHead.insertRow(0);
-				row.onclick = onClickRow;
 				let headers = that.header.split(':');
 				headers.forEach((headerName, index) => {
 					let cell = row.insertCell(index);
@@ -187,6 +186,7 @@
 				tbody = table.createTBody();
 				this.data.forEach((dataItem, index) => {
 					let row = tbody.insertRow(index);
+					row.onclick = onClickRow;
 					headers.forEach((header, index) => {
 						let cell = row.insertCell(index);
 						cell.setAttribute('label', header);
