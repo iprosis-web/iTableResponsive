@@ -1,5 +1,5 @@
 {
-	"name": "SAC Table widget",
+	"name": "iTable-Responsive",
 	"description": "Custom Widget Table",
 	"eula": "",
 	"vendor": "iProsis",
@@ -45,6 +45,10 @@
 			"description": "Reloads the tabele with ned header and data. Run methods setHeader and setData before it."
 		}
 	},
-	"events": {}
+	"events": {
+		"onRowClicked": {
+			"description": "Called when user clicks row in the widget"
+		}
+	}
 }
 

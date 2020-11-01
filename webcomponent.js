@@ -169,13 +169,17 @@
 				}
 
 				// callback on click on the row
-				const onClickRow = function () {
-					let resultString = '';
+				const onRowClicked = function () {
+					let resultArray = [];
 					for (let i = 0; i < this.cells.length; i++) {
-						// NOTABLE: "this" points to clicked row. The function is used as onclick method
-						resultString = resultString + this.cells.item(i).innerText;
+						// NOTABLE: "this" points to clicked row. The function is used as onclick method of the row
+						resultArray.push(this.cells.item(i).innerText);
 					}
-					that.choosenRowData = resultString;
+					that.choosenRowData = resultArray.join(':');
+					// Send event to be used by external framework
+					let externalEvent = new Event('onRowClicked');
+					that.dispatchEvent(externalEvent);
+
 					console.log('Clicked row:::', that.choosenRowData);
 				};
 
@@ -192,7 +196,7 @@
 				tbody = table.createTBody();
 				this.data.forEach((dataItem, index) => {
 					let row = tbody.insertRow(index);
-					row.onclick = onClickRow;
+					row.onclick = onRowClicked;
 					headers.forEach((header, index) => {
 						let cell = row.insertCell(index);
 						cell.setAttribute('label', header);
