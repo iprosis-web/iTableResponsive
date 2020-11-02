@@ -48,8 +48,19 @@
 		"getClickedRow": {
 			"description": "Returns the string representing the data of clicked row",
 			"returnType": "string"
+		},
+
+		"setBreakingWidht": {
+			"description": "Sets the the width to switch between mobile and wide view",
+			"parameters": [
+				{
+					"name": "theSWidth", 
+					"type": "integer" 
+				}
+			]
 		}
 	},
+	
 	"events": {
 		"onRowClicked": {
 			"description": "Called when user clicks row in the widget"

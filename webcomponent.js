@@ -205,6 +205,10 @@
 			getClickedRow() {
 				return this.clickedRowData;
 			}
+
+			setBreakingWidht(theWidth) {
+				this.breakingWidht = theWidth;
+			}
 		}
 	);
 })();
