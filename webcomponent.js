@@ -18,6 +18,7 @@
 
 				table thead td {
 					color: #346187;
+					font-weight: bold;
 				}
 
 				table.mobile thead {
