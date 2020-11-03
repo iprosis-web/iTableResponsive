@@ -208,7 +208,7 @@
 						cell.innerText = dataItem[header];
 					});
 				});
-				
+
 				this.redraw();
 			}
 
@@ -221,7 +221,7 @@
 			}
 
 			setFieldsHiddenOnMobile(theFields) {
-				this.fieldsHiddenOnMobile = thefields;
+				this.fieldsHiddenOnMobile = theFields;
 			}
 		}
 	);
