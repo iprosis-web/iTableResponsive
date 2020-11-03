@@ -29,6 +29,10 @@
 					padding-top: 8px !important;
 				}
 
+				table.mobile td.hiddenOnMobile {
+					display: none;
+				}
+
 				table.mobile tr {
 					border-bottom: 1px solid #dee2e6 !important;
 				}
@@ -79,6 +83,7 @@
 				this.data = [];
 				this.breakingWidht = 500; // Lwss that this width - renderd as mobile. TODO: to be exposed as component propety.
 				this.clickedRowData = '';
+				this.fieldsHiddenOnMobile = [];
 			}
 
 			//Fired when the widget is added to the html DOM of the page
@@ -197,9 +202,14 @@
 					headers.forEach((header, index) => {
 						let cell = row.insertCell(index);
 						cell.setAttribute('label', header);
+						if(this.fieldsHiddenOnMobile.includes(header)) {
+							cell.classList.add('hiddenOnMobile');
+						}
 						cell.innerText = dataItem[header];
 					});
 				});
+				
+				this.redraw();
 			}
 
 			getClickedRow() {
@@ -208,6 +218,10 @@
 
 			setBreakingWidht(theWidth) {
 				this.breakingWidht = theWidth;
+			}
+
+			setFieldsHiddenOnMobile(theFields) {
+				this.fieldsHiddenOnMobile = thefields;
 			}
 		}
 	);

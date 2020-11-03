@@ -54,11 +54,22 @@
 			"description": "Sets the the width to switch between mobile and wide view",
 			"parameters": [
 				{
-					"name": "theSWidth", 
+					"name": "theWidth", 
 					"type": "integer" 
 				}
 			]
+		},
+
+		"setFieldsHiddenOnMobile": {
+			"description": "Sets th names of the table fields that will not be displayed on the mobile (card view)",
+			"parameters": [
+				{
+					"name": "theFields", 
+					"type": "string[]" 
+				}
+			]
 		}
+
 	},
 	
 	"events": {
